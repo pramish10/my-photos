@@ -1,22 +1,23 @@
 import React, { useState } from 'react'
+
 import { useNavigate } from 'react-router-dom'
+import { Eye, EyeOff } from 'lucide-react'
 
 const Input = ({ label, value, placeholder, type = "text", onChange, required = true }) => (
 
     <div>
 
-        <label htmlFor="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5">{label}</label>
+        <label className="block text-xs sm:text-sm font-medium text-slate-700 mb-1.5">{label}</label>
 
         <input type={type} value={value} onChange={(e) => onChange(e.target.value)} placeholder={placeholder} required={required} className='auth-input' />
 
     </div>
 
-
 )
 
 const AuthPage = () => {
 
-    const [isLogin, setIsLogin] = useState(true)
+    const [isLogin, setIsLogin] = useState(false)
 
     const [showPassword, setShowPassword] = useState(false)
 
@@ -89,8 +90,29 @@ const AuthPage = () => {
 
                     <form onSubmit={handleSubmit} className='space-y-4'>
 
-                        {!isLogin && <Input key="Name" label="Full Name" value={form.name} placeholder="Enter your full Name" onChange={(v) => update("Name", v)} />}
+                        {!isLogin && <Input key="name" label="Full Name" value={form.name} placeholder="Enter your full Name" onChange={(v) => update("name", v)} />}
 
+                        <Input key="email" label="Email" type='email' value={form.email} placeholder="Enter your Email" onChange={(v) => update ("email", v)} />
+
+                        {/* Password */}
+
+                        <div>
+
+                        <label className='block text-xs sm:text-sm font-medium text-slate-700 mb-1.5'> Password </label>
+
+                        <div className='relative'>
+
+                            <input type={showPassword ? "text" : "password"} value={form.password} onChange= {(e) => update("password", e.target.value) } placeholder='Enter your Password' className='auth-input pr-11'/>
+
+                            <button type='button' onClick={()=> setShowPassword((v)=>!v)} className='absolute right-3.5 top-3.5 text-slate-400 hover:text-slate-600 transition cursor-pointer'>
+
+                                {showPassword ?<EyeOff className="size-4"/> : <Eye className="size-4"/>}
+
+                            </button>
+
+                        </div>
+
+                        </div>
 
                     </form>
 
@@ -98,12 +120,10 @@ const AuthPage = () => {
 
             </div>
 
-
-
-
         </div>
 
     )
+
 }
 
 export default AuthPage

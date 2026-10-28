@@ -238,6 +238,12 @@ body {
     @apply w-full px-4 py-3 bg-[#f3f4f8] hover:bg-[#eef0f5] focus:bg-white border border-transparent focus:border-slate-300 rounded-xl text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none transition;
 }
 
+/* Hide browser's built-in password reveal icon (Edge / IE) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
 .auth-btn-primary {
     @apply w-full mt-2 py-3.5 bg-black hover:bg-neutral-800 disabled:opacity-50 text-white rounded-xl text-sm font-semibold transition cursor-pointer flex items-center justify-center gap-2;
 }
