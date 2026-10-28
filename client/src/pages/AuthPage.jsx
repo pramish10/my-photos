@@ -1,0 +1,37 @@
+import React from 'react'
+
+const AuthPage = () => {
+    return (
+        <div className='w-full bg-white h-screen rounded-[30px] sm:rounded-[38px] overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-16- lg:min-h-180'>
+
+        {/* Hero */}
+        <div className='relative lg:col-span-6 p-2 sm:p-3 flex flex-col'>
+
+            <div className='realtive size-ful rounded-[26px] sm:rounded-4xl overflow-hidden flex flex-col justify-between p-8 sm:p-12 text-white bg-black'>
+
+                <img src="/login_ribbon.png" alt="Fluid Neon Art" className='absolute inset-0 size-full object-cover object-center'/>
+
+                <div className='absolute inset-0 bg-linear-to-b from-black/30 via-black/60 to-black'/>
+
+                <div>
+                    <h2 className='text-4xl sm:text-5xl lg:text-5xl font-medium'>My photos</h2>
+                    <p className='text-xs sm:text-sm text-white/80 leading-relaxed max-w-sm mt-4 sm:mt-5'>Safely store and organize your HD photos and videos</p>     
+                </div>
+
+                
+
+
+            </div>
+
+
+
+        </div>
+
+        {/* Form */}
+
+            </div>
+        
+    )
+}
+
+export default AuthPage
