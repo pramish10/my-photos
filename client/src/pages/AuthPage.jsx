@@ -72,9 +72,9 @@ const AuthPage = () => {
 
             {/* Form */}
 
-            <div className='lg:col-span-6 bg-white px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16 flex flex-col justify-between'>
+            <div className='lg:col-span-6 bg-white px-8 py-6 sm:px-12 sm:py-8 lg:px-16 lg:py-8 flex flex-col justify-between'>
 
-                <img src="/logo.png" alt="App Logo" className='h-16 xl:h-20 xl:mt-10 w-auto object-contain' />
+                <img src="/logo.png" alt="App Logo" className='h-16 xl:h-20 xl:mt-2 w-auto object-contain' />
 
                 <div className='max-w-md w-full mx-auto my-auto py-2'>
 
@@ -114,7 +114,40 @@ const AuthPage = () => {
 
                         </div>
 
+                        <div className='flex items-center justify-between text-xs pt-0.5'>
+
+                            <label className="flex items-center gap-2 cursor-pointer select-none">
+
+                                <input type="checkbox" checked={form.rememberMe} onChange={(e) => update("rememberMe",e.target.checked)} className='size-4 rounded border-slate-300 accent-slate-900 cursor-pointer' />
+
+                                <span className='text-slate-600'>Remember Me</span>
+
+                            </label>
+
+                            <button type='button' className='text-slate-700 hover:text-slate-950 hover:underline transition cursor-pointer' >
+                                Forgot Password ?
+                            </button>
+
+                        </div>
+
+                        <button type='submit' disabled={loading} className='auth-btn-primary'>
+                            {loading ? <p>Loading</p> : isLogin? "Sign In" : "Sign Up"}
+                        </button>
+
                     </form>
+
+                </div>
+
+                <div className='mt-8 text-xs sm:text-sm text-center text-slate-600 '>
+
+                    {isLogin ? "Don't have an account? " : "Already have an account ? "}
+
+                    <button type='button' onClick={()=> setIsLogin((prev)=> !prev)} className='font-medium text-slate-900 hover:underline cursor-pointer' >
+
+                    {isLogin ? "Sign Up" : "Sign In"}
+                    
+
+                    </button>
 
                 </div>
 
