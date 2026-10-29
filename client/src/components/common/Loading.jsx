@@ -1,3 +1,4 @@
+import { Loader2Icon } from 'lucide-react';
 import React from 'react'
 
 const Loading = ({className = " ",size = "md" , fullScreen = false,inline = false}) => {
@@ -13,8 +14,8 @@ const Loading = ({className = " ",size = "md" , fullScreen = false,inline = fals
     const sizeClass = sizeMap[size] || sizeMap.md;
 
     if(inline){
-        return <Loader2Icon></Loader2Icon> 
-
+        return <Loader2Icon className={'${sizeClass}   '}/>
+            
 
 
 
