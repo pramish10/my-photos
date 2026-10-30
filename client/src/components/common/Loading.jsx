@@ -14,7 +14,7 @@ const Loading = ({className = " ",size = "md" , fullScreen = false,inline = fals
     const sizeClass = sizeMap[size] || sizeMap.md;
 
     if(inline){
-        return <Loader2Icon className={'${sizeClass}   '}/>
+        return <Loader2Icon className={'${sizeClass} aniamte-spin ${className || "text-current"}'}/>
             
 
 
